@@ -26,11 +26,12 @@ public class HomeController : Controller
 
     public IActionResult SignUp()
     {
-        ViewData["Title"] = "Blog";
+        ViewData["Title"] = "Sign Up";
         return View();
     }
     public IActionResult SignIn()
     {
+        ViewData["Title"] = "Sign In";
         return View();
     }
 }

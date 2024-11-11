@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace WebApplication1.Models.Entities;
 
@@ -22,8 +23,9 @@ public class UserFile
     public bool IsPublic { get; set; } = false;  
 
     // Власник файлу (Foreign Key)
-    public Guid UserId { get; set; }
-
+    public Guid UserId { get; set; } 
+    
+    [ValidateNever]
     [ForeignKey("UserId")]
     public virtual User User { get; set; }
 }
